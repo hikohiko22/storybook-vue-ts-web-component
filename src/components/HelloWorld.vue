@@ -1,9 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <input v-model="icon" />
-    <input v-model="msg" />
-    <mwc-button raised :icon="icon" :label="msg"></mwc-button>
+    <mwc-button raised :icon="icon" :label="msg" :disabled="disabled"></mwc-button>
   </div>
 </template>
 
@@ -14,6 +12,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 export default class HelloWorld extends Vue {
   @Prop() private msg!: string;
   @Prop() private icon!: string;
+  @Prop({ default: false }) private disabled!: boolean;
 }
 </script>
 
