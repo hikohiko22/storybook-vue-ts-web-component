@@ -2,6 +2,9 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <mwc-button raised :icon="icon" :label="msg" :disabled="disabled"></mwc-button>
+    <esmodule-test>
+      <p>aaa</p>
+    </esmodule-test>
   </div>
 </template>
 

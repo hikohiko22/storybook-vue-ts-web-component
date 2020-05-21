@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <title>HelloWorld!</title>
+    <script src="components/webComponentsTest/CustomElements.js" defer></script>
+    <script src="components/webComponentsTest/ShadowDOM.js" defer></script>
+    <script src="components/webComponentsTest/template.js" defer></script>
+    <script type="module" src="components/webComponentsTest/ESModules.js" defer></script>
+  </head>
+  <body>
+    <!-- customElement -->
+    <imwc-button></imwc-button>
+
+    <!-- shadow-dom -->
+    <shadow-dom>
+      <p slot="text">I am blue!</p>
+      <button slot="button">button</button>
+    </shadow-dom>
+
+    <!-- template-area -->
+    <template id="template-test">
+      <style>
+        :host { border : solid 1px; display: inline-block; padding:1em; }
+        p { color : red }
+        ::slotted(p) { color : blue}
+      </style>
+      <p>this is template!!</p>
+      <div>
+        <p>slotted area</p>
+        <slot name="slot1">slot1がないよ</slot>
+        <slot name="slot2">slot2がないよ</slot>
+      </div>
+    </template>
+    <!-- template-test -->
+    <template-test>
+      <button slot="slot1">slot1</button>
+    </template-test>
+
+    <!-- esmodule-test -->
+    <esmodule-test>
+      <button>僕はslotです！！！</button>
+    </esmodule-test>
+  </body>
+</html>
